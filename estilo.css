@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    margin: 0;
+}
+
+main {
+    background: #fff;
+    max-width: 540px;
+    margin: 40px auto;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+h1 { margin-top: 0; }
+label { display: block; margin-top: 15px; }
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font: inherit;
+}
+button {
+    margin-top: 18px;
+    padding: 11px 20px;
+    background: #2866c7;
+    color: white;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+a { color: #205cbb; }
+main.lista { max-width: 1000px; }
+.tabela { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { border: 1px solid #ddd; padding: 9px; text-align: left; vertical-align: top; }
+th { background: #eee; }
