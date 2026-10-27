@@ -1,24 +1,37 @@
 # EscalaWeb — Cadastro de contatos
 
-Demonstração de formulário de contato com PHP, MySQL e PDO, preparada a partir do sistema local de Abner Gabriel.
+Sistema de cadastro e consulta de contatos com PHP, MySQL e PDO. O formulário recebe nome, e-mail, telefone e mensagem, salva os dados no banco e permite consultar os registros cadastrados.
 
 ## Funcionalidades
 
-- Cadastro de nome, e-mail, telefone e mensagem.
-- Validação de campos obrigatórios, e-mail e limites de tamanho.
-- Inserção com consultas preparadas e listagem com escape de HTML.
-- Configuração local separada do código versionado.
+- Cadastro de contatos pelo formulário.
+- Validação de campos obrigatórios, formato de e-mail e limites de tamanho.
+- Gravação no MySQL com consultas preparadas.
+- Listagem dos contatos, do mais recente para o mais antigo.
+- Escape de HTML na exibição dos dados.
 
-## Executar localmente
+## Tecnologias
 
-1. Use PHP 8 com PDO MySQL e mbstring, MySQL e Apache (por exemplo, XAMPP).
-2. Crie um banco local chamado `escalaweb_demo` e importe `banco.sql`. O arquivo contém somente a estrutura, sem contatos reais.
-3. Copie `config.exemplo.php` para `config.local.php` e informe as credenciais do banco local. Esse arquivo é ignorado pelo Git.
-4. Coloque a pasta na área de projetos do seu servidor local e abra `index.php` pelo navegador.
-5. Cadastre somente dados fictícios e confira a listagem em `contatos.php`.
+PHP 8, MySQL, PDO, HTML e CSS.
 
-## Escopo da demonstração
+## Como executar
 
-O envio de e-mail está desativado. A listagem ainda não possui autenticação: execute somente em ambiente local com dados fictícios. Antes de hospedar uma aplicação com dados reais, implemente controle de acesso, proteção CSRF e medidas contra abuso.
+1. Configure um servidor local com PHP 8, as extensões PDO MySQL e mbstring e um banco MySQL. Você pode usar o XAMPP.
+2. Crie o banco `escalaweb_demo` e importe o arquivo `banco.sql`.
+3. Copie `config.exemplo.php` para `config.local.php` e preencha os dados da conexão. Esse arquivo fica fora do versionamento.
+4. Coloque o projeto na pasta do servidor local e acesse `index.php` pelo navegador.
+5. Cadastre um contato de teste e abra `contatos.php` para conferir o registro.
 
-Esta cópia não inclui credenciais de hospedagem, backups, ferramentas de publicação ou registros do banco real. A sintaxe dos arquivos PHP foi validada. O fluxo desta cópia com um banco local ainda precisa ser testado antes da publicação.
+## Arquivos principais
+
+- `index.php`: formulário de contato.
+- `salvar.php`: validação e gravação dos dados.
+- `conexao.php`: conexão com o MySQL.
+- `contatos.php`: consulta e exibição dos contatos.
+- `banco.sql`: estrutura da tabela.
+- `config.exemplo.php`: modelo de configuração local.
+- `estilo.css`: estilos das páginas.
+
+## Limitações
+
+Projeto de estudo para execução local, com dados fictícios. O envio de e-mail está desativado. A listagem não possui autenticação e o formulário ainda não implementa proteção CSRF ou limitação de envios. Esses recursos são necessários antes de disponibilizar o sistema para uso com dados reais.
